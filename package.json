@@ -6,15 +6,24 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "mongoose": "^5.3.16",
-    "morgan": "~1.9.0"
+    "morgan": "^1.9.1",
+    "nodemailer": "^4.7.0"
   },
   "main": "app.js",
   "devDependencies": {},
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobustInfinity/sample.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RobustInfinity/sample/issues"
+  },
+  "homepage": "https://github.com/RobustInfinity/sample#readme",
   "description": ""
 }
