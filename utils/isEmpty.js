@@ -1,6 +1,6 @@
 
 
-//checking fir null, undefined, empty string and object
+//checking for null, undefined, empty string and object
 const isEmpty = value => 
     value === null || value === undefined || 
     typeof value === 'object' && Object.keys(value).length === 0 ||

@@ -2,8 +2,16 @@ var express = require('express');
 var router = express.Router();
 const formInputValidate = require('../validations/formInput')
 const dbOperations = require('../db/crudoperations/user')
+const path = require('path')
 
+router.post('/',(request, response)=>{
+  response.sendFile(path.join(__dirname, '/../public/index.html'));
+    // console.log(pathToIndex)
+  // response.sendfile(pathToIndex)
+})
 
+//@route POST /user-form
+//@description Create a user in db
 router.post('/user-form',(request, response)=>{
 
   var body = request.body
@@ -18,20 +26,20 @@ router.post('/user-form',(request, response)=>{
     }else{
       //if user doesn't exist, create user and send mail else send message
       if(result){
-        response.json({message : 'User with this email already exists !!!'})
+        response.status(200).json({message : 'User with this email already exists !!!'})
       }else{
         dbOperations.createUser(body,(error, result)=>{
           if(error){
-            response.status(403).json(error)
+            response.status(200).json({message : 'Something Went Wrong !!!'})
           }else{
-              response.status(200).json(result)
+              response.status(200).json({message : 'Registered Successfully'})
           }
         })
       }
     }
   })
 }else{
-    response.status(422).json(errors)
+    response.status(200).json({message : 'Invalid Phone Number'})
   }
 })
 
