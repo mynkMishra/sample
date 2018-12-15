@@ -32,6 +32,9 @@ const config = require('./config/config')
 //connecting with DB Server
 const DB_URL = config.DB_URL
 console.log(typeof process.env.DB_URL)
+console.log(process.env.DB_URL)
+console.log(process.env.NODE_ENV)
+console.log(process.env.PORT)
 mongoose.connect(DB_URL || process.env.DB_URL,{ useNewUrlParser: true }).then(()=>{
     console.log("Successfully connected to MongoDB");
 }).catch((err)=>{
