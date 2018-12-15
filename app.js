@@ -39,7 +39,7 @@ mongoose.connect(DB_URL,{ useNewUrlParser: true }).then(()=>{
 
 //listening at PORT
 const PORT = config.PORT
-app.listen(PORT,()=>{
+app.listen(PORT || process.env.PORT,()=>{
     console.log('Server started at',PORT )
 })
 module.exports = app;
