@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/RobustInfinity/sample_f/precache-manifest.38c7d6a8551dd4ea8922bb5044b29816.js"
+  "/RobustInfinity/sample_f/precache-manifest.432c90749fd8c9d7fc38a2e318c0bb0b.js"
 );
 
 workbox.clientsClaim();

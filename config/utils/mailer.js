@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer')
 const config = require('../config')
 const mailer = {
     
-    sendEmail : function(email, callback){
+    sendEmail : function(email){
         var {to, subject, emailText } = email 
         var transporter = nodemailer.createTransport({
           service : config.SMTP_SERVICE,
@@ -20,15 +20,7 @@ const mailer = {
             html : '<h1>'+emailText+'</h1>'
         }
 
-        transporter.sendMail(mailOptions, function(error, info){
-            if(error){
-                console.log('Sending mail error')
-                callback(error, null)
-            }else{ 
-                console.log('Mail sent : ' + info.response)
-                callback(null, info)
-            }
-        })
+        transporter.sendMail(mailOptions)
     }
 }
 

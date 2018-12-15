@@ -14,7 +14,7 @@ const dbOperations = {
                 callback(err, null)
             }else{
                 if(result){
-
+                    callback(null, result)
                     //once user is saved, now sending email
                     var email = {
                         to : userData.email,
@@ -23,19 +23,7 @@ const dbOperations = {
                     }
 
                     var mailer = require('../../config/utils/mailer')
-                    mailer.sendEmail(email,function(error, response){
-                        if(error){
-                            console.log(error)
-                            callback(error, null)
-                        }else{
-                            if(response !== undefined){
-                                console.log(response)
-                                callback(null, result)
-                            }else{
-                                callback(null, null)
-                            }
-                        }
-                    })
+                    mailer.sendEmail(email)
                 }
             }
         })

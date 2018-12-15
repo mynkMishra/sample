@@ -4,16 +4,20 @@ const formInputValidate = require('../validations/formInput')
 const dbOperations = require('../db/crudoperations/user')
 const path = require('path')
 
-router.post('/',(request, response)=>{
+router.get('/*',(request, response)=>{
   response.sendFile(path.join(__dirname, '/../public/index.html'));
     // console.log(pathToIndex)
   // response.sendfile(pathToIndex)
 })
 
+// router.get('/user-form',(request, response)=>{
+//   response.send()
+//   console.log('Reloaded')
+// })
 //@route POST /user-form
 //@description Create a user in db
 router.post('/user-form',(request, response)=>{
-
+  console.log(request.url)
   var body = request.body
   //validating phoneNumber (can be extended for other input variables)
   var {isValid, errors} = formInputValidate(body)
