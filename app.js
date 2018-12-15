@@ -31,7 +31,7 @@ const config = require('./config/config')
 
 //connecting with DB Server
 const DB_URL = config.DB_URL
-mongoose.connect(DB_URL,{ useNewUrlParser: true }).then(()=>{
+mongoose.connect(DB_URL || process.env.DB_URL,{ useNewUrlParser: true }).then(()=>{
     console.log("Successfully connected to MongoDB");
 }).catch((err)=>{
     console.log("Unable to connect to MongoDB ",err);
