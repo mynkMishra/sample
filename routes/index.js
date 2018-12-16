@@ -28,10 +28,11 @@ router.post('/user-form',(request, response)=>{
     if(error){
       response.json({message : 'fail'})
     }else{
-      //if user doesn't exist, create user and send mail else send message
+      //checkong if user already exist
       if(result){
         response.status(200).json({message : 'User with this email already exists !!!'})
       }else{
+        //if user doesn't exist, create user and send mail else send message
         dbOperations.createUser(body,(error, result)=>{
           if(error){
             response.status(200).json({message : 'Something Went Wrong !!!'})
