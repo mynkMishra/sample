@@ -5,6 +5,8 @@ A MERN app with user registration form
 
 -> React framework for client-side rendering
 
+-> Create-React-App for React bolierplate App
+
 -> Mlab (MongoDB) for database with mongoose framework
 
 -> Nodemialer for mailing registration success message with gmail as SMTP service
@@ -12,5 +14,7 @@ A MERN app with user registration form
 -> Axios for handling HTTP requests on client side
 
 -> Express framework for handling routes in Node environment
+
+-> Express generator for file structuring on server
 
 -> Name, email, dob validations on client side and Phone Number validation on server side
